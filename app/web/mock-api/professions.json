@@ -1,18 +1,22 @@
 [
-    {
-      "uid": "ajkdnasdasjn212312",
-      "title": "DJ"
-    },
-    {
-      "uid": "ajdasdskdjn212312",
-      "title": "Hair Stlyist"
-    },
-    {
-      "uid": "aasdskdjn212312",
-      "title": "Food Delivery"
-    },
-    {
-      "uid": "aasdskdjn212312",
-      "title": "Gardening"
-    }      
+  {
+    "uid": "ajkdnasdasjn212312",
+    "title": "Recreation Workers"
+  },
+  {
+    "uid": "ajdasdskdjn212312",
+    "title": "Train driver"
+  },
+  {
+    "uid": "aasdskdjn212312",
+    "title": "Restaurant Chef"
+  },
+  {
+    "uid": "aasdskdjn212312",
+    "title": "Gym trainer"
+  },
+  {
+    "uid": "aasdskdjn212312",
+    "title": "Housekeeper"
+  }        
 ]
