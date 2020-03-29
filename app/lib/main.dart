@@ -198,7 +198,7 @@ class _SelectProfessionPageState extends State<SelectProfessionPage> {
                     Padding(
                       padding: const EdgeInsets.only(top: 16.0, bottom: 8),
                       child: Text(
-                        '(1/3)\n\nFirst, we need to know what is your current profession. Select one from the list or choose other.',
+                        '\n\nFirst, we need to know what is your current profession. Select one from the list or choose other.',
                         style: TextStyle(
                           color: Color(0xff6a8caf),
                           fontSize: 16,
@@ -236,70 +236,6 @@ class _SelectProfessionPageState extends State<SelectProfessionPage> {
                         color: Color(0xff75b79e),
                         textColor: Colors.white,
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SuggestPage()));
-                        },
-                        child: Text(
-                          'Next',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, letterSpacing: 1.2),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          color: Color(0xffeef9bf),
-        ),
-      ),
-    );
-  }
-}
-
-class SuggestPage extends StatefulWidget {
-  @override
-  _SuggestPageState createState() => _SuggestPageState();
-}
-
-class _SuggestPageState extends State<SuggestPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xffeef9bf),
-      body: Center(
-        child: Container(
-          width: 320,
-          height: 400,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 8),
-                      child: Text(
-                        '(2/3)\n\nMake a suggestions [in progress...]',
-                        style: TextStyle(
-                          color: Color(0xff6a8caf),
-                          fontSize: 16,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: RaisedButton(
-                        color: Color(0xff75b79e),
-                        textColor: Colors.white,
-                        onPressed: () {
-                          Navigator.pop(context);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -342,7 +278,7 @@ class ConfirmPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 16.0, bottom: 8),
                     child: Text(
-                      '(3/3)\n\nWe will now show you some job alternatives based on what other people with your same profession suggest.\n\nClick on 👍 up if you like it or 👎 if you don’t.\n\nThis will help our algorithm learn how to make better suggestions over time.',
+                      '\n\nWe will now show you some job alternatives based on what other people with your same profession suggest.\n\nClick on 👍 up if you like it or 👎 if you don’t.\n\nThis will help our algorithm learn how to make better suggestions over time.',
                       style: TextStyle(
                         color: Color(0xff6a8caf),
                         fontSize: 16,
