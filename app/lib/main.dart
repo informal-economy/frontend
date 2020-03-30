@@ -19,12 +19,15 @@ class Recommendation {
 
 class Global {
   static Map<String, String> professions;
+  static Map<String, dynamic> allRecommendations;
   static ListQueue<dynamic> recommendations;
-  static String selectedProfesionID = '';
+  static String selectedProfesionID;
 
   Global.init() {
     professions = {};
     recommendations = ListQueue();
+    allRecommendations = {};
+    selectedProfesionID = '';
     loadNetwork();
   }
 
@@ -33,21 +36,25 @@ class Global {
       List<dynamic> data = json.decode(myjson);
       professions = Map.fromEntries(
           data.map((obj) => MapEntry(obj['uid'], obj['title'])));
-      // debugPrint('professions: ' + professions.toString());
+      debugPrint('professions: ' + professions.toString());
     });
 
     HttpRequest.getString('mock-api/recommendations.json').then((myjson) {
-      List<dynamic> data = json.decode(myjson);
-      recommendations = ListQueue.from(data.map((obj) => Recommendation(
-          uid: obj['uid'],
-          title: obj['title'],
-          description: obj['description'])));
-      debugPrint('recommendations: ' + recommendations.toString());
+      debugPrint('ALLrecommendations: ' + allRecommendations.toString());
+      allRecommendations = json.decode(myjson);
+      debugPrint('ALLrecommendations: ' + allRecommendations.toString());
     });
   }
 
   static setSelectedProfession(String professionID) {
     selectedProfesionID = professionID;
+    debugPrint('ALLrecommendations: ' + allRecommendations.toString());
+    recommendations = ListQueue.from(allRecommendations[professionID].map(
+        (obj) => Recommendation(
+            uid: obj['uid'],
+            title: obj['title'],
+            description: obj['description'])));
+    debugPrint('recommendations: ' + recommendations.toString());
   }
 
   static getSelectedProfessionTitle() {
